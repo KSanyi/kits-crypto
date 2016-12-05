@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 import org.junit.Test;
 
-import kits.blockchain.signature.KeyGenerator;
+import kits.blockchain.signature.KeyManager;
 import kits.blockchain.signature.License;
 import kits.blockchain.signature.LicenseSigner;
 import kits.blockchain.signature.SignedLicense;
@@ -14,8 +14,8 @@ public class LicenseSignerTest {
 	@Test
 	public void test2() {
 
-		KeyGenerator.generateKeyPair("testdata/keypair");
-		KeyGenerator.generateKeyPair("testdata/keypair2");
+		KeyManager.generateKeyPair("testdata/keypair");
+		KeyManager.generateKeyPair("testdata/keypair2");
 
 		String privateKeyPath = "testdata/keypair/private";
 		String publicKeyPath = "testdata/keypair/public";
