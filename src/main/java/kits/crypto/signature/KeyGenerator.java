@@ -1,4 +1,4 @@
-package kits.blockchain.signature;
+package kits.crypto.signature;
 
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;

@@ -1,10 +1,15 @@
-package kits.blockchain.signature;
+package kits.crypto.signature;
 
 import java.security.KeyPair;
 import java.time.LocalDate;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import kits.crypto.signature.KeyGenerator;
+import kits.crypto.signature.License;
+import kits.crypto.signature.LicenseSigner;
+import kits.crypto.signature.SignedLicense;
 
 public class LicenseSignerTest {
 

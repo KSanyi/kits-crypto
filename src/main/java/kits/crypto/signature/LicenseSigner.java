@@ -1,4 +1,4 @@
-package kits.blockchain.signature;
+package kits.crypto.signature;
 
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;

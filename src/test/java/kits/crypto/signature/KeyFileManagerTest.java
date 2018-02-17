@@ -1,4 +1,4 @@
-package kits.blockchain.signature;
+package kits.crypto.signature;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,6 +8,9 @@ import java.security.PublicKey;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import kits.crypto.signature.KeyFileManager;
+import kits.crypto.signature.KeyGenerator;
 
 public class KeyFileManagerTest {
 

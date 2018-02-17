@@ -1,4 +1,4 @@
-package kits.blockchain.signature;
+package kits.crypto.signature;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -71,15 +71,22 @@ public class KeyFileManager {
 
     public static PublicKey loadPublicKeyFromPemFile(String publicKeyFilePath) {
         try {
-            List<String> lines = Files.readAllLines(Paths.get(publicKeyFilePath));
-
+            String publicKeyPemString = new String(Files.readAllBytes(Paths.get(publicKeyFilePath)));
+            return loadPublicKeyFromPemString(publicKeyPemString);
+        } catch (IOException ex) {
+            throw new RuntimeException("Can not read public key file from " + publicKeyFilePath, ex);
+        } 
+    }
+    
+    public static PublicKey loadPublicKeyFromPemString(String publicKeyPemString) {
+        try {
+            List<String> lines = Arrays.asList(publicKeyPemString.split("\n"));
+            
             byte[] encodedKeyBytes = String.join("", lines.subList(1, lines.size() - 1)).getBytes();
             byte[] keyBytes = Base64.getDecoder().decode(encodedKeyBytes);
 
             X509EncodedKeySpec spec = new X509EncodedKeySpec(keyBytes);
             return KeyFactory.getInstance("DSA").generatePublic(spec);
-        } catch (IOException ex) {
-            throw new RuntimeException("Can not read public key file from " + publicKeyFilePath, ex);
         } catch (InvalidKeySpecException | NoSuchAlgorithmException ex) {
             throw new RuntimeException(ex);
         }

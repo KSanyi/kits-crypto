@@ -1,4 +1,4 @@
-package kits.blockchain.signature;
+package kits.crypto.signature;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -6,11 +6,11 @@ import java.util.List;
 
 public class License {
 
-    public LocalDate expiration;
+    public final LocalDate expiration;
 
-    public String hardwareId;
+    public final String hardwareId;
 
-    public List<String> features;
+    public final List<String> features;
 
     public License(LocalDate expiration, String hardwareId, String... features) {
         this.expiration = expiration;
