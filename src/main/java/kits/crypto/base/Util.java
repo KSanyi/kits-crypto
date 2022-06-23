@@ -58,5 +58,4 @@ public class Util {
         return (byte)(0xff & xor);
     }
     
-    
 }

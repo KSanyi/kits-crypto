@@ -1,16 +1,14 @@
 package kits.crypto.signature;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.io.File;
 import java.io.IOException;
 import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-import kits.crypto.signature.KeyFileManager;
-import kits.crypto.signature.KeyGenerator;
+import org.junit.jupiter.api.Test;
 
 public class KeyFileManagerTest {
 
@@ -25,7 +23,7 @@ public class KeyFileManagerTest {
 
         PrivateKey restoredPrivateKey = KeyFileManager.loadPrivateKeyFromPemFile(privateKeyPath);
 
-        Assert.assertEquals(privateKey, restoredPrivateKey);
+        assertEquals(privateKey, restoredPrivateKey);
     }
 
     @Test
@@ -39,7 +37,7 @@ public class KeyFileManagerTest {
 
         PublicKey restoredPublicKey = KeyFileManager.loadPublicKeyFromPemFile(publicKeyPath);
 
-        Assert.assertEquals(publicKey, restoredPublicKey);
+        assertEquals(publicKey, restoredPublicKey);
     }
 
 }
