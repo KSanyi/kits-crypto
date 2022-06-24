@@ -8,8 +8,8 @@ public class Util {
         
         Pair<String, String> equalLengthStrings = makeEqualLengthStrings(a, b);
         
-        String aConverted = equalLengthStrings.first;
-        String bConverted = equalLengthStrings.second;
+        String aConverted = equalLengthStrings.first();
+        String bConverted = equalLengthStrings.second();
         
         byte[] aBytes = aConverted.getBytes(StandardCharsets.US_ASCII);
         byte[] bBytes = bConverted.getBytes(StandardCharsets.US_ASCII);

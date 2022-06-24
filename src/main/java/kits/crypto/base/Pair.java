@@ -1,19 +1,14 @@
 package kits.crypto.base;
 
-public class Pair<T, S> {
+public record Pair<S, T>(S first, T second) {
 
-    public final T first;
-    
-    public final S second;
-
-    public Pair(T first, S second) {
-        this.first = first;
-        this.second = second;
-    }
-    
     @Override
     public String toString() {
-        return String.format("[%s, %s]", first.toString(), second.toString());
+        return "(" + first + ", " + second + ")";
     }
     
-} 
+    public static <S, T> Pair<S, T> of(S first, T second) {
+        return new Pair<>(first, second);
+    }
+    
+}

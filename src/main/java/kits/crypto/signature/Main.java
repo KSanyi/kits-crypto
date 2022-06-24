@@ -21,7 +21,7 @@ public class Main {
         
         System.out.println("Public key:\n" + publicKeyString);
 
-        System.out.println("Verifying signaure");
+        System.out.println("Verifying signature");
         boolean isValid = LicenseSigner.verifySignature(SignedLicense.parse(signedLicenseString), KeyFileManager.loadPublicKeyFromPemString(publicKeyString));
         System.out.println("Signaure is valid? " + isValid);
     }

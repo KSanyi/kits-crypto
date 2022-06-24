@@ -17,8 +17,8 @@ public class ProblemSet2 {
                 new Pair<>("7b50baab07640c3d", "ac343a22cea46d60"));
         
         for(Pair<String, String> pair : pairs) {
-            byte[] bytes1 = convertToBytes(pair.first);
-            byte[] bytes2 = convertToBytes(pair.second);
+            byte[] bytes1 = convertToBytes(pair.first());
+            byte[] bytes2 = convertToBytes(pair.second());
             
             byte[] res = Util.xor(bytes1, bytes2);
             
